@@ -1,0 +1,4 @@
+C:\Users\hic\Documents\GitHub\SportsStore\SportsStore\SportsStore\bin\SportsStore.dll
+C:\Users\hic\Documents\GitHub\SportsStore\SportsStore\SportsStore\bin\SportsStore.pdb
+C:\Users\hic\Documents\GitHub\SportsStore\SportsStore\SportsStore\obj\Debug\SportsStore.dll
+C:\Users\hic\Documents\GitHub\SportsStore\SportsStore\SportsStore\obj\Debug\SportsStore.pdb
