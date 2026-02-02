@@ -5,7 +5,7 @@
    { %>
    <div>
  <h3><%=p.Name%></h3>
- <%=@p.Description%>
+ <%=p.Description%>
  <h4><%=p.Price.ToString("c")%></h4>
  </div>
 <% } %>

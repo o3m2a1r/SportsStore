@@ -13,7 +13,7 @@ namespace SportsStore.Controllers
 
         public ActionResult List()
         {
-            repository = new FakeProductRepository();
+            repository = new DeserializedProductRepository();
             return View(repository.Products);
         }
 

@@ -5,6 +5,7 @@ using System.Web;
 
 namespace SportsStore.Models
 {
+    [Serializable]
     public class Product
     {
         public int ProductID { get; set; }
