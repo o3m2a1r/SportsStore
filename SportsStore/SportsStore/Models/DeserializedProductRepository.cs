@@ -5,6 +5,7 @@ using System.Web;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using System.Web.Hosting;
 
 namespace SportsStore.Models
 {
@@ -53,7 +54,8 @@ namespace SportsStore.Models
             {
                 try
                 {
-                    using (var file = new FileStream("Products.bin", FileMode.Open, FileAccess.Read))
+                    string filePath = HostingEnvironment.MapPath("~/App_Data/Products.bin");
+                    using (var file = new FileStream(filePath, FileMode.Open, FileAccess.Read))
                     {
                         var form = new BinaryFormatter();
                         return (IEnumerable<Product>)form.Deserialize(file);
@@ -61,6 +63,13 @@ namespace SportsStore.Models
                 }
                 catch
                 {
+                    /*string filePath = HostingEnvironment.MapPath("~/App_Data/Products.bin");
+                    using (var file = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write))
+                    {
+                        var form = new BinaryFormatter();
+                        var fake = new FakeProductRepository();
+                        form.Serialize(file, fake.Products);
+                    }*/
                     return ensurePopulated;
                 }
             }
