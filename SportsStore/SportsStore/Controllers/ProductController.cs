@@ -11,10 +11,12 @@ namespace SportsStore.Controllers
     {
         private IProductRepository repository;
 
-        public ActionResult List()
+        public int pageSize = 4;
+
+        public ActionResult List(int page = 1)
         {
             repository = new DeserializedProductRepository();
-            return View(repository.Products);
+            return View(repository.Products.OrderBy(p => p.ProductID).Skip((page-1)*pageSize).Take(pageSize));
         }
 
     }
