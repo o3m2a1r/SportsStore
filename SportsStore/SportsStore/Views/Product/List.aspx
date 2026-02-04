@@ -3,10 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <% foreach (var p in Model.Products)
    { %>
-   <div>
- <h3><%=p.Name%></h3>
- <%=p.Description%>
- <h4><%=p.Price.ToString("c")%></h4>
+   <div class="well">
+ <h3>
+ <strong><%=p.Name%></strong>
+ <span class="pull-right label label-primary">
+<%=p.Price.ToString("c")%>
+</span>
+ </h3>
+ <span class="lead"><%=p.Description%></span>
  </div>
 <% } %>
 <div>
