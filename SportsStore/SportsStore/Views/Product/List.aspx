@@ -9,5 +9,11 @@
  <h4><%=p.Price.ToString("c")%></h4>
  </div>
 <% } %>
-
+<div>
+<% int n = 1; while(n <= Model.Paging.TotalPages)
+   { %>
+   <a href ="/Products/Page<%=n %>"><%=n %> </a>
+   <%n++;
+   } %>
+   </div>
 </asp:Content>
