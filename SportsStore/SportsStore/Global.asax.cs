@@ -17,6 +17,12 @@ namespace SportsStore
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+            name: "pagination",
+            url: "Products/Page{page}",
+            defaults: new { controller = "Product", action = "List" }
+                );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Product", action = "List", id = UrlParameter.Optional } // Parameter defaults
